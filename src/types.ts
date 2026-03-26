@@ -7,6 +7,18 @@ export interface Message {
   timestamp: number;
   mode?: ChatMode;
   modelSteps?: ModelStep[];
+  isStreaming?: boolean;
+  metadata?: {
+    duration?: number;
+  };
+}
+
+export interface ChatSession {
+  id: string;
+  title: string;
+  messages: Message[];
+  timestamp: number;
+  mode: ChatMode;
 }
 
 export interface ModelStep {
